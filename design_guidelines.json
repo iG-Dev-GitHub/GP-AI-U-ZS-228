@@ -1,0 +1,156 @@
+{
+  "theme": "Dark",
+  "archetype": "7 (Electric & Neon - Arcade/Casino Adaptation)",
+  "app_name_rule": "NEVER show 'Task Drop Day Plinko' anywhere in UI or icon. Use generic terms like 'Plan My Day' or 'Daily Drop'.",
+  "data_storage": "Local storage only (AsyncStorage or SQLite). No backend. No push notifications.",
+  "colors": {
+    "background": {
+      "main": "#090A10",
+      "board": "#13182B",
+      "surface": "#1E243A"
+    },
+    "pegs": {
+      "default": "#FFFFFF",
+      "glow": "rgba(255, 255, 255, 0.8)",
+      "shadow": "0px 0px 10px rgba(255,255,255,0.8)"
+    },
+    "day_formats": {
+      "steady_day_center": "#3B82F6",
+      "quick_win_mid": "#10B981",
+      "deep_work_outer": "#F59E0B",
+      "full_sprint_edges": "#EF4444"
+    },
+    "task_cards": {
+      "morning_bg": "#1E3A8A",
+      "evening_bg": "#9A3412",
+      "priority_high": "#EF4444",
+      "priority_med": "#F59E0B",
+      "priority_low": "#3B82F6",
+      "completed": "#475569"
+    },
+    "text": {
+      "primary": "#FFFFFF",
+      "secondary": "#94A3B8",
+      "accent": "#E2E8F0"
+    }
+  },
+  "typography": {
+    "font_family": {
+      "heading": "Nunito-Black",
+      "body": "Nunito-SemiBold",
+      "timer": "JetBrainsMono-Bold"
+    },
+    "sizes": {
+      "h1": "text-4xl tracking-tight leading-tight",
+      "h2": "text-3xl tracking-tight leading-snug",
+      "h3": "text-xl leading-normal",
+      "body": "text-base leading-relaxed",
+      "small": "text-sm uppercase tracking-widest",
+      "timer_massive": "text-7xl tracking-tighter"
+    }
+  },
+  "spacing_and_layout": {
+    "padding": {
+      "screen": "p-6",
+      "card": "p-4",
+      "button": "py-4 px-8"
+    },
+    "border_radius": {
+      "card": "rounded-2xl",
+      "button": "rounded-full",
+      "cell": "rounded-xl"
+    },
+    "plinko_board": "10 rows of offset pegs. Bottom row has 7 slots. Aspect ratio tailored for mobile vertical screens (roughly 4:5)."
+  },
+  "motion_and_interactions": {
+    "ball_drop": "Physics-based bouncy drop via react-native-reanimated. Gravity, restitution (bounciness), and random horizontal impulse on peg collision.",
+    "full_sprint_hit": "Board flashes red, dramatic screen shake, massive red countdown timer scales up.",
+    "day_clear": "Golden particles/confetti explosion, badge pop-up with a bouncy spring animation.",
+    "card_press": "Scale down to 0.95 on press-in, release to 1.0."
+  },
+  "components": {
+    "PlinkoBoard": {
+      "description": "Pyramid board with dark-blue background and glowing white pegs. 7 colored cells at the bottom determining the day format.",
+      "bottom_cells_arrangement": ["Red", "Yellow", "Green", "Blue", "Green", "Yellow", "Red"],
+      "test_id": "plinko-board-container"
+    },
+    "PlinkoBall": {
+      "description": "Glowing sphere with a clock inside. Hands tick rapidly while falling.",
+      "test_id": "plinko-ball"
+    },
+    "DayFormatCell": {
+      "description": "Bottom catchers for the ball. Each has a specific color and icon. Glows brightly when the ball lands inside.",
+      "test_id": "day-format-cell"
+    },
+    "TaskCard": {
+      "description": "Bright cartoon flat art card. Large tap target for checkbox. Time-based background color shift.",
+      "test_id": "task-card-item"
+    },
+    "RiskLevelToggle": {
+      "description": "Switch between Easy and Hardcore probabilities. Alters ball drop trajectory logic.",
+      "test_id": "risk-level-toggle"
+    },
+    "CountdownTimer": {
+      "description": "Used in Full Sprint. Monospaced massive font, ticks every second.",
+      "test_id": "sprint-countdown-timer"
+    }
+  },
+  "screens_and_flow": {
+    "WelcomeTutorial": {
+      "type": "Modal/Stack",
+      "features": ["3 slides explaining mechanics", "Plan My Day CTA button"]
+    },
+    "TodayMain": {
+      "type": "Tab",
+      "features": ["Mini inactive Plinko board summary", "Current Day Format header", "Tasks list up to 10 items", "+ Add Task button", "Drop for Today button"]
+    },
+    "DropScreen": {
+      "type": "Modal/Stack",
+      "features": ["Full-screen Plinko board", "Risk Level toggle", "Drop button", "Live drop animation", "Result format card overlay"]
+    },
+    "FullSprintActive": {
+      "type": "Modal/Stack",
+      "features": ["Red themed full screen", "Countdown timer to 18:00", "Remaining tasks list", "Progress bar"]
+    },
+    "Tomorrow": {
+      "type": "Tab",
+      "features": ["Inactive Plinko board", "Pre-add tasks for next day", "Carried-over tasks list"]
+    },
+    "Stats": {
+      "type": "Tab",
+      "features": ["Day Clear streaks", "Full Sprint wins count", "Grid of earned badges", "History of past days"]
+    },
+    "Settings": {
+      "type": "Tab",
+      "features": ["Morning drop default (8:00)", "Full Sprint deadline (18:00)", "Evening reminder (22:00)", "Reset data option"]
+    }
+  },
+  "expo_router_structure": {
+    "app": {
+      "_layout.js": "Root Stack Navigator (handles Modals)",
+      "(tabs)": {
+        "_layout.js": "Bottom Tabs Navigator",
+        "index.js": "TodayMain",
+        "tomorrow.js": "Tomorrow",
+        "stats.js": "Stats",
+        "settings.js": "Settings"
+      },
+      "welcome.js": "Modal - WelcomeTutorial",
+      "drop.js": "Modal - DropScreen",
+      "full-sprint.js": "Modal - FullSprintActive"
+    }
+  },
+  "assets_requirements": {
+    "instructions": "Use AI-generated PNGs (Gemini Nano Banana style) for the following assets.",
+    "items": [
+      "Ball: Glowing sphere with clock inside",
+      "Pegs: Individual glowing white peg sprites",
+      "FormatCells: 4 variations (Blue, Green, Yellow, Red)",
+      "Badges: 'Day Clear', 'On Fire' (streak), 'Week Champion'",
+      "FormatCards: Result overlay cards for the 4 modes"
+    ]
+  },
+  "testing": {
+    "attributes": "ALL interactive elements must use data-testid (e.g., data-testid='add-task-button', data-testid='drop-ball-button')."
+  }
+}
