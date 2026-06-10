@@ -1,0 +1,10 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements">
+    <ui:VisualElement name="timepicker-backdrop" class="modal-backdrop modal-backdrop-center">
+        <ui:VisualElement class="modal-sheet-center">
+            <ui:Label text="Pick time" class="modal-title" />
+            <ui:ScrollView style="max-height: 320px;" vertical-scroller-visibility="Hidden" horizontal-scroller-visibility="Hidden">
+                <ui:VisualElement name="timepicker-list" />
+            </ui:ScrollView>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

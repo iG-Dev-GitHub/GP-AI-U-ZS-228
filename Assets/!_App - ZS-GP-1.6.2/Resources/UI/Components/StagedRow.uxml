@@ -1,0 +1,9 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements">
+    <ui:VisualElement class="staged-row">
+        <ui:VisualElement class="staged-dot" />
+        <ui:Label name="staged-title" text="Task" class="staged-title" />
+        <ui:Button name="staged-delete" class="staged-delete">
+            <ui:Label text="🗑" class="staged-delete-icon" />
+        </ui:Button>
+    </ui:VisualElement>
+</ui:UXML>

@@ -1,0 +1,16 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements">
+    <ui:VisualElement name="task-card" class="task-card">
+        <ui:Button name="task-checkbox" class="task-checkbox">
+            <ui:Label name="task-check-icon" text="✔" class="task-check-icon" />
+        </ui:Button>
+        <ui:VisualElement class="task-body">
+            <ui:Label name="task-title" text="Task title" class="task-title" />
+            <ui:VisualElement name="task-tag" class="task-tag">
+                <ui:Label name="task-tag-text" text="Med" class="task-tag-text" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:Button name="task-delete" class="task-delete">
+            <ui:Label text="🗑" class="task-delete-icon" />
+        </ui:Button>
+    </ui:VisualElement>
+</ui:UXML>

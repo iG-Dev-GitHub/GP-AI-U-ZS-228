@@ -1,0 +1,11 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements">
+    <ui:VisualElement name="format-card" class="format-card">
+        <ui:VisualElement name="format-icon-wrap" class="format-icon-wrap">
+            <ui:Label name="format-icon" text="⚡" class="format-icon" />
+        </ui:VisualElement>
+        <ui:VisualElement class="format-body">
+            <ui:Label name="format-title" text="Steady Day" class="format-title" />
+            <ui:Label name="format-desc" text="Complete 3 tasks." class="format-desc" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

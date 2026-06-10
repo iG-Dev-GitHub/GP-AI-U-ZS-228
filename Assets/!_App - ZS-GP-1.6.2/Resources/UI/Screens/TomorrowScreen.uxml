@@ -1,0 +1,31 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements">
+    <ui:ScrollView class="screen-scroll" vertical-scroller-visibility="Hidden" horizontal-scroller-visibility="Hidden">
+        <ui:VisualElement name="screen-content" class="screen-content">
+
+            <ui:Label text="Pre-plan" class="kicker" />
+            <ui:Label text="Tomorrow" class="h1" />
+            <ui:Label text="Stage tasks for tomorrow. They merge with carried-over tasks at midnight." class="sub-text" />
+
+            <ui:VisualElement class="board-wrap">
+                <ui:VisualElement name="tomorrow-board-slot" />
+                <ui:VisualElement class="board-inactive-overlay">
+                    <ui:Label text="🔒" class="board-inactive-icon" />
+                    <ui:Label text="Drop unlocks tomorrow morning" class="board-inactive-text" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+
+            <ui:Button name="tomorrow-add" class="btn-pill">
+                <ui:Label text="+" class="btn-pill-icon" />
+                <ui:Label text="Add Task" class="btn-pill-text" />
+            </ui:Button>
+
+            <ui:Label name="tomorrow-section" text="Staged Tasks (0)" class="section-title" />
+            <ui:VisualElement name="tomorrow-list" />
+
+            <ui:VisualElement name="tomorrow-empty" class="empty-state hidden">
+                <ui:Label text="Nothing staged for tomorrow yet." class="empty-text" />
+            </ui:VisualElement>
+
+        </ui:VisualElement>
+    </ui:ScrollView>
+</ui:UXML>

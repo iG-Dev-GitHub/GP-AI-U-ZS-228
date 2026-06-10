@@ -1,0 +1,1022 @@
+/* ============================================
+   Components.uss — Cards, buttons, tab bar, plinko, modals
+   ============================================ */
+
+/* ── Header row (kicker + h1 + progress pill) ── */
+.header-row {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.progress-pill {
+    background-color: var(--color-bg-surface);
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-radius: 999px;
+}
+
+.progress-pill-text {
+    color: var(--color-accent);
+    font-size: 14px;
+    -unity-font-style: bold;
+}
+
+/* ── CTA buttons ── */
+.cta-row {
+    flex-direction: row;
+    margin-top: 16px;
+    margin-bottom: 18px;
+}
+
+.cta {
+    flex-grow: 1;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    border-radius: 999px;
+    border-width: 0;
+    background-color: var(--color-accent);
+    margin-right: 10px;
+    transition: scale 0.1s ease;
+}
+
+.cta:active {
+    scale: 0.97 0.97;
+}
+
+.cta-icon {
+    font-size: 18px;
+    color: var(--color-text-inverse);
+    margin-right: 8px;
+}
+
+.cta-text {
+    color: var(--color-text-inverse);
+    font-size: 16px;
+    -unity-font-style: bold;
+}
+
+.cta-disabled {
+    background-color: var(--color-bg-surface);
+}
+
+.cta-disabled .cta-icon,
+.cta-disabled .cta-text {
+    color: var(--color-text-secondary);
+}
+
+.cta-sprint {
+    background-color: var(--color-sprint);
+}
+
+.cta-sprint .cta-icon,
+.cta-sprint .cta-text {
+    color: var(--color-white);
+}
+
+/* Add (+) square button next to CTA */
+.add-square {
+    width: 56px;
+    height: 56px;
+    border-radius: 28px;
+    background-color: var(--color-bg-surface);
+    align-items: center;
+    justify-content: center;
+    border-width: 0;
+}
+
+.add-square-icon {
+    font-size: 22px;
+    color: var(--color-white);
+    -unity-font-style: bold;
+}
+
+/* Full-width pill button (Tomorrow add, welcome cta, drop button) */
+.btn-pill {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-radius: 999px;
+    background-color: var(--color-accent);
+    border-width: 0;
+    transition: scale 0.1s ease;
+}
+
+.btn-pill:active {
+    scale: 0.98 0.98;
+}
+
+.btn-pill-icon {
+    font-size: 20px;
+    color: var(--color-text-inverse);
+    margin-right: 8px;
+    -unity-font-style: bold;
+}
+
+.btn-pill-text {
+    color: var(--color-text-inverse);
+    font-size: 16px;
+    -unity-font-style: bold;
+}
+
+/* ── Tab bar (flush to device bottom, no gap) ── */
+.tab-bar {
+    flex-direction: row;
+    height: 76px;
+    background-color: var(--color-tabbar-bg);
+    border-top-width: 1px;
+    border-top-color: var(--color-bg-surface);
+    padding-top: 9px;
+    padding-bottom: 6px;
+}
+
+.tab-btn {
+    flex-grow: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0);
+    border-width: 0;
+}
+
+.tab-icon {
+    font-size: 23px;
+    color: var(--color-text-muted);
+    margin-bottom: 3px;
+}
+
+.tab-label {
+    font-size: var(--font-size-xs);
+    -unity-font-style: bold;
+    color: var(--color-text-muted);
+}
+
+.tab-btn.active .tab-icon,
+.tab-btn.active .tab-label {
+    color: var(--color-accent);
+}
+
+/* ── Task card ── */
+.task-card {
+    flex-direction: row;
+    align-items: center;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    padding-left: 14px;
+    padding-right: 14px;
+    margin-bottom: 10px;
+    border-radius: 14px;
+    background-color: var(--color-task-morning);
+    border-left-width: 5px;
+    border-left-color: var(--color-steady);
+}
+
+.task-checkbox {
+    width: 26px;
+    height: 26px;
+    border-radius: 13px;
+    border-width: 2px;
+    border-color: var(--color-steady);
+    align-items: center;
+    justify-content: center;
+    margin-right: 12px;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.task-check-icon {
+    font-size: 16px;
+    color: var(--color-text-inverse);
+    -unity-font-style: bold;
+}
+
+.task-body {
+    flex-grow: 1;
+}
+
+.task-title {
+    color: var(--color-text-primary);
+    font-size: var(--font-size-lg);
+    -unity-font-style: bold;
+    white-space: normal;
+}
+
+.task-title-done {
+    color: var(--color-text-secondary);
+}
+
+.task-tag {
+    align-self: flex-start;
+    margin-top: 6px;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    border-radius: 6px;
+}
+
+.task-tag-text {
+    font-size: var(--font-size-xs);
+    -unity-font-style: bold;
+    letter-spacing: 1px;
+}
+
+.task-delete {
+    padding-left: 6px;
+    padding-right: 6px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    margin-left: 4px;
+    background-color: rgba(0, 0, 0, 0);
+    border-width: 0;
+}
+
+.task-delete-icon {
+    font-size: 16px;
+    color: var(--color-text-secondary);
+}
+
+/* ── Day format badge card ── */
+.format-card {
+    flex-direction: row;
+    align-items: center;
+    padding: 14px;
+    border-radius: 16px;
+    border-width: 2px;
+    border-color: var(--color-steady);
+}
+
+.format-icon-wrap {
+    width: 64px;
+    height: 64px;
+    border-radius: 14px;
+    align-items: center;
+    justify-content: center;
+    margin-right: 12px;
+    background-color: var(--color-steady);
+}
+
+.format-icon {
+    font-size: 30px;
+    color: var(--color-white);
+}
+
+.format-body {
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+
+.format-title {
+    font-size: var(--font-size-xl);
+    -unity-font-style: bold;
+    color: var(--color-steady);
+}
+
+.format-desc {
+    color: var(--color-text-accent);
+    font-size: var(--font-size-md);
+    margin-top: 2px;
+    white-space: normal;
+}
+
+/* ── Plinko board ── */
+.plinko-board {
+    border-radius: 24px;
+    background-color: var(--color-bg-board);
+    overflow: hidden;
+    align-self: center;
+}
+
+.plinko-peg {
+    position: absolute;
+    background-color: var(--color-white);
+}
+
+.plinko-cell {
+    position: absolute;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.plinko-ball {
+    position: absolute;
+    background-color: var(--color-white);
+    align-items: center;
+    justify-content: center;
+}
+
+.plinko-ball-icon {
+    font-size: 16px;
+    color: var(--color-bg-deep);
+}
+
+.board-wrap {
+    align-items: center;
+    margin-top: 14px;
+    margin-bottom: 18px;
+}
+
+.board-inactive-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--color-board-inactive);
+    align-items: center;
+    justify-content: center;
+    border-radius: 24px;
+}
+
+.board-inactive-icon {
+    font-size: 22px;
+    color: var(--color-text-secondary);
+    margin-bottom: 8px;
+}
+
+.board-inactive-text {
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-md);
+    -unity-font-style: bold;
+}
+
+/* ── Staged task row (Tomorrow) ── */
+.staged-row {
+    flex-direction: row;
+    align-items: center;
+    background-color: var(--color-bg-surface);
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 14px;
+    padding-right: 14px;
+    border-radius: 12px;
+    margin-bottom: 8px;
+}
+
+.staged-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 4px;
+    background-color: var(--color-accent);
+    margin-right: 12px;
+}
+
+.staged-title {
+    color: var(--color-text-primary);
+    font-size: var(--font-size-base);
+    -unity-font-style: bold;
+    flex-grow: 1;
+}
+
+.staged-delete {
+    background-color: rgba(0, 0, 0, 0);
+    border-width: 0;
+    padding: 4px;
+}
+
+.staged-delete-icon {
+    font-size: 16px;
+    color: var(--color-text-secondary);
+}
+
+/* ── Stats metrics ── */
+.metrics-row {
+    flex-direction: row;
+    margin-top: 18px;
+}
+
+.metric {
+    flex-grow: 1;
+    flex-basis: 0;
+    background-color: var(--color-bg-surface);
+    padding: 14px;
+    border-radius: 16px;
+    align-items: flex-start;
+    margin-right: 10px;
+}
+
+.metric-icon {
+    font-size: 22px;
+    color: var(--color-accent);
+}
+
+.icon-clear {
+    color: var(--color-quick);
+}
+
+.icon-streak {
+    color: var(--color-deep);
+}
+
+.icon-sprint {
+    color: var(--color-sprint);
+}
+
+.metric-value {
+    color: var(--color-text-primary);
+    font-size: 28px;
+    -unity-font-style: bold;
+    margin-top: 8px;
+}
+
+.metric-label {
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-xs);
+    -unity-font-style: bold;
+    letter-spacing: 1px;
+    margin-top: 2px;
+}
+
+/* ── Badge tiles ── */
+.badges-row {
+    flex-direction: row;
+}
+
+.badge-tile {
+    flex-grow: 1;
+    flex-basis: 0;
+    background-color: var(--color-bg-surface);
+    padding: 14px;
+    border-radius: 16px;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.badge-locked {
+    opacity: 0.5;
+}
+
+.badge-emoji-wrap {
+    width: 64px;
+    height: 64px;
+    border-radius: 32px;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.06);
+}
+
+.badge-emoji {
+    font-size: 30px;
+    color: var(--color-accent);
+}
+
+.badge-title {
+    color: var(--color-text-primary);
+    font-size: var(--font-size-md);
+    -unity-font-style: bold;
+    margin-top: 8px;
+    -unity-text-align: middle-center;
+}
+
+.badge-lock-text {
+    color: var(--color-text-muted);
+    font-size: 10px;
+    margin-top: 2px;
+}
+
+/* ── History rows ── */
+.history-row {
+    flex-direction: row;
+    align-items: center;
+    background-color: var(--color-bg-surface);
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 14px;
+    padding-right: 14px;
+    border-radius: 12px;
+    margin-bottom: 8px;
+}
+
+.history-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    margin-right: 12px;
+    background-color: var(--color-steady);
+}
+
+.history-title {
+    color: var(--color-text-primary);
+    font-size: 14px;
+    -unity-font-style: bold;
+}
+
+.history-date {
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-xs);
+    margin-top: 2px;
+}
+
+.history-tasks {
+    color: var(--color-accent);
+    font-size: 14px;
+    -unity-font-style: bold;
+    margin-right: 12px;
+}
+
+.history-status-icon {
+    font-size: 20px;
+    color: var(--color-quick);
+}
+
+/* ── Settings rows ── */
+.setting-row {
+    flex-direction: row;
+    align-items: center;
+    background-color: var(--color-bg-surface);
+    padding-top: 14px;
+    padding-bottom: 14px;
+    padding-left: 14px;
+    padding-right: 14px;
+    border-radius: 12px;
+    margin-bottom: 8px;
+    border-width: 0;
+}
+
+.setting-icon {
+    font-size: 18px;
+    color: var(--color-accent);
+    margin-right: 12px;
+}
+
+.setting-label {
+    color: var(--color-text-primary);
+    font-size: var(--font-size-base);
+    -unity-font-style: bold;
+    flex-grow: 1;
+}
+
+.setting-value {
+    color: var(--color-accent);
+    font-size: var(--font-size-base);
+    -unity-font-style: bold;
+    margin-right: 10px;
+}
+
+.setting-chevron {
+    font-size: 16px;
+    color: var(--color-text-faint);
+}
+
+/* ── Risk chips ── */
+.risk-row {
+    flex-direction: row;
+}
+
+.risk-chip {
+    flex-grow: 1;
+    flex-basis: 0;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    border-radius: 999px;
+    align-items: center;
+    background-color: var(--color-bg-surface);
+    border-width: 0;
+    margin-right: 10px;
+}
+
+.risk-text {
+    color: var(--color-text-primary);
+    font-size: var(--font-size-base);
+    -unity-font-style: bold;
+}
+
+.risk-chip-easy-active {
+    background-color: var(--color-quick);
+}
+
+.risk-chip-hardcore-active {
+    background-color: var(--color-sprint);
+}
+
+.risk-chip-active .risk-text {
+    color: var(--color-text-inverse);
+}
+
+.hint-text {
+    color: var(--color-text-muted);
+    font-size: var(--font-size-sm);
+    margin-top: 8px;
+    white-space: normal;
+}
+
+/* ── Reset button ── */
+.reset-btn {
+    flex-direction: row;
+    align-items: center;
+    border-color: var(--color-sprint);
+    border-width: 1px;
+    border-radius: 12px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    padding-left: 14px;
+    padding-right: 14px;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.reset-icon {
+    font-size: 16px;
+    color: var(--color-sprint);
+    margin-right: 10px;
+}
+
+.reset-text {
+    color: var(--color-sprint);
+    font-size: var(--font-size-base);
+    -unity-font-style: bold;
+}
+
+/* ── Empty state ── */
+.empty-state {
+    align-items: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.empty-icon {
+    font-size: 40px;
+    color: var(--color-text-faint);
+    margin-bottom: 10px;
+}
+
+.empty-text {
+    color: var(--color-text-muted);
+    font-size: 14px;
+    -unity-text-align: middle-center;
+    white-space: normal;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+/* ============================================
+   Modal overlays (Add Task, Time picker, Confirm reset)
+   ============================================ */
+.modal-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--color-overlay);
+    justify-content: flex-end;
+}
+
+.modal-backdrop-center {
+    justify-content: center;
+    padding: 24px;
+}
+
+.modal-sheet {
+    background-color: var(--color-bg-surface);
+    padding: 20px;
+    padding-bottom: 32px;
+    border-top-left-radius: 24px;
+    border-top-right-radius: 24px;
+}
+
+.modal-sheet-center {
+    background-color: var(--color-bg-surface);
+    border-radius: 18px;
+    padding: 18px;
+}
+
+.modal-title {
+    color: var(--color-text-primary);
+    font-size: var(--font-size-2xl);
+    -unity-font-style: bold;
+    margin-bottom: 14px;
+}
+
+.modal-body-text {
+    color: var(--color-text-secondary);
+    font-size: 14px;
+    margin-top: 6px;
+    white-space: normal;
+}
+
+.modal-input {
+    background-color: var(--color-bg-input);
+    color: var(--color-text-primary);
+    font-size: var(--font-size-lg);
+    border-radius: 12px;
+    border-width: 1px;
+    border-color: var(--color-border);
+    padding-left: 14px;
+    padding-right: 14px;
+    height: 48px;
+}
+
+.modal-input .unity-text-field__input {
+    background-color: rgba(0, 0, 0, 0);
+    color: var(--color-text-primary);
+    border-width: 0;
+    font-size: var(--font-size-lg);
+}
+
+.modal-label {
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-sm);
+    -unity-font-style: bold;
+    letter-spacing: 2px;
+    margin-top: 16px;
+    margin-bottom: 8px;
+}
+
+/* Priority chips */
+.priority-row {
+    flex-direction: row;
+}
+
+.priority-chip {
+    flex-grow: 1;
+    flex-basis: 0;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    border-radius: 999px;
+    border-width: 2px;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0);
+    margin-right: 10px;
+}
+
+.priority-chip-text {
+    -unity-font-style: bold;
+    font-size: 14px;
+}
+
+/* Modal action buttons */
+.modal-actions {
+    flex-direction: row;
+    margin-top: 22px;
+}
+
+.modal-btn {
+    flex-grow: 1;
+    flex-basis: 0;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    border-radius: 999px;
+    align-items: center;
+    border-width: 0;
+    margin-right: 10px;
+}
+
+.modal-btn-ghost {
+    background-color: var(--color-bg-deep);
+}
+
+.modal-btn-primary {
+    background-color: var(--color-accent);
+}
+
+.modal-btn-danger {
+    background-color: var(--color-sprint);
+}
+
+.modal-btn-text {
+    font-size: var(--font-size-lg);
+    -unity-font-style: bold;
+}
+
+/* Time picker rows */
+.time-row {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    border-bottom-width: 1px;
+    border-bottom-color: var(--color-border);
+    background-color: rgba(0, 0, 0, 0);
+    border-left-width: 0;
+    border-right-width: 0;
+    border-top-width: 0;
+}
+
+.time-text {
+    color: var(--color-text-primary);
+    font-size: var(--font-size-lg);
+}
+
+/* ── Top bar (Drop / FullSprint modals) ── */
+.top-bar {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.icon-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0);
+    border-width: 0;
+}
+
+.icon-btn-icon {
+    font-size: 22px;
+    color: var(--color-white);
+}
+
+.top-kicker {
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-sm);
+    -unity-font-style: bold;
+    letter-spacing: 2px;
+}
+
+/* ── Drop bottom area ── */
+.drop-bottom {
+    margin-top: 16px;
+}
+
+.dropping-msg {
+    align-items: center;
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+.dropping-text {
+    color: var(--color-text-secondary);
+    font-size: 14px;
+    -unity-font-style: bold;
+}
+
+.label-kicker {
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-xs);
+    -unity-font-style: bold;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
+
+/* ── Full Sprint ── */
+.sprint-screen {
+    background-color: var(--color-bg-sprint);
+}
+
+.timer-wrap {
+    align-items: center;
+    padding-top: 18px;
+    padding-bottom: 18px;
+}
+
+.timer-label {
+    color: var(--color-sprint-light);
+    font-size: var(--font-size-sm);
+    -unity-font-style: bold;
+    letter-spacing: 2px;
+    margin-bottom: 6px;
+}
+
+.timer-xl {
+    color: var(--color-sprint-light);
+    font-size: var(--font-size-timer-xl);
+    -unity-font-style: bold;
+    letter-spacing: 4px;
+}
+
+.sprint-progress {
+    width: 100%;
+    height: 8px;
+    background-color: var(--color-bg-board-red);
+    border-radius: 4px;
+    margin-top: 14px;
+    overflow: hidden;
+}
+
+.sprint-progress-fill {
+    height: 8px;
+    background-color: var(--color-sprint);
+    border-radius: 4px;
+    width: 0;
+}
+
+.sprint-progress-text {
+    color: var(--color-sprint-light);
+    font-size: var(--font-size-sm);
+    margin-top: 6px;
+    -unity-font-style: bold;
+}
+
+.cleared-banner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-accent);
+    padding: 12px;
+    border-radius: 12px;
+    margin-bottom: 10px;
+}
+
+.cleared-icon {
+    font-size: 18px;
+    color: var(--color-text-inverse);
+    margin-right: 8px;
+}
+
+.cleared-text {
+    color: var(--color-text-inverse);
+    -unity-font-style: bold;
+    font-size: var(--font-size-base);
+}
+
+/* ── Welcome (onboarding) ── */
+.welcome-slide {
+    flex-grow: 1;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 32px;
+    padding-right: 32px;
+}
+
+.welcome-badge {
+    padding-left: 14px;
+    padding-right: 14px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    border-radius: 999px;
+    margin-top: 16px;
+    background-color: var(--color-steady);
+}
+
+.welcome-badge-text {
+    color: var(--color-white);
+    font-size: var(--font-size-xs);
+    -unity-font-style: bold;
+    letter-spacing: 2px;
+}
+
+.welcome-title {
+    color: var(--color-text-primary);
+    font-size: var(--font-size-h1);
+    -unity-font-style: bold;
+    margin-top: 14px;
+    -unity-text-align: middle-center;
+}
+
+.welcome-body {
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-base);
+    margin-top: 8px;
+    -unity-text-align: middle-center;
+    white-space: normal;
+}
+
+.welcome-footer {
+    padding-left: 32px;
+    padding-right: 32px;
+    padding-bottom: 24px;
+    padding-top: 12px;
+}
+
+.dots-row {
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 16px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 4px;
+    background-color: var(--color-bg-surface);
+    margin-left: 4px;
+    margin-right: 4px;
+}
+
+.dot-active {
+    background-color: var(--color-accent);
+    width: 22px;
+}
+
+.sub-text {
+    color: var(--color-text-secondary);
+    font-size: 14px;
+    margin-top: 6px;
+    margin-bottom: 14px;
+    white-space: normal;
+}
+
+/* ── Inline-safe color utilities ──
+   var() must NEVER appear in a UXML inline style="" attribute: Unity's StyleVariableResolver
+   throws a NullReferenceException while cloning the template (no variable context yet). Use
+   these classes instead. Defined last so they win over earlier same-specificity rules. */
+.text-inverse {
+    color: var(--color-text-inverse);
+}
+
+.text-white {
+    color: var(--color-white);
+}
+
+.text-sprint-light {
+    color: var(--color-sprint-light);
+}

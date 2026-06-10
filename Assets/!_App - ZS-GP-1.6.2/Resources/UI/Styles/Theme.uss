@@ -1,0 +1,149 @@
+/* ============================================
+   Theme.uss — Design tokens and base styles
+   Dark electric/neon arcade palette (from design_guidelines.json + source styles)
+   ============================================ */
+
+:root {
+    /* ── Backgrounds ── */
+    --color-bg-main: #090A10;
+    --color-bg-board: #13182B;
+    --color-bg-surface: #1E243A;
+    --color-bg-deep: #0B1020;
+    --color-bg-input: #0B1020;
+    --color-bg-sprint: #1B0606;
+    --color-bg-board-red: #3B0A0A;
+    --color-tabbar-bg: #0B1020;
+
+    /* ── Borders ── */
+    --color-border: #2A3350;
+    --color-border-surface: #1E243A;
+
+    /* ── Text ── */
+    --color-text-primary: #FFFFFF;
+    --color-text-secondary: #94A3B8;
+    --color-text-muted: #64748B;
+    --color-text-accent: #E2E8F0;
+    --color-text-faint: #475569;
+    --color-text-inverse: #0B1020;
+
+    /* ── Accent ── */
+    --color-accent: #FACC15;
+    --color-sprint-light: #FCA5A5;
+
+    /* ── Day format / priority colors ── */
+    --color-steady: #3B82F6;
+    --color-quick: #10B981;
+    --color-deep: #F59E0B;
+    --color-sprint: #EF4444;
+
+    /* ── Task card backgrounds ── */
+    --color-task-morning: #0F1E3D;
+    --color-task-evening: #451A03;
+
+    /* ── Misc ── */
+    --color-white: #FFFFFF;
+    --color-completed: #475569;
+    --color-overlay: rgba(0, 0, 0, 0.65);
+    --color-overlay-strong: rgba(0, 0, 0, 0.7);
+    --color-board-inactive: rgba(9, 10, 16, 0.75);
+
+    /* ── Typography scale ── */
+    --font-size-xs: 11px;
+    --font-size-sm: 12px;
+    --font-size-md: 13px;
+    --font-size-base: 15px;
+    --font-size-lg: 16px;
+    --font-size-xl: 18px;
+    --font-size-2xl: 22px;
+    --font-size-h1: 30px;
+    --font-size-timer-lg: 40px;
+    --font-size-timer-xl: 72px;
+}
+
+/* ── Base layout ── */
+.screen {
+    flex-grow: 1;
+    background-color: var(--color-bg-main);
+}
+
+.screen-scroll {
+    flex-grow: 1;
+}
+
+.screen-content {
+    padding: 20px;
+    padding-bottom: 28px;
+    /* padding-top set dynamically in C# for safe area */
+}
+
+/* ── Typography ── */
+.kicker {
+    font-size: var(--font-size-xs);
+    -unity-font-style: bold;
+    color: var(--color-text-muted);
+    letter-spacing: 2px;
+}
+
+.h1 {
+    font-size: var(--font-size-h1);
+    -unity-font-style: bold;
+    color: var(--color-text-primary);
+    margin-top: 2px;
+}
+
+.section-title {
+    font-size: var(--font-size-sm);
+    -unity-font-style: bold;
+    color: var(--color-text-secondary);
+    letter-spacing: 2px;
+    margin-top: 22px;
+    margin-bottom: 10px;
+}
+
+.text-body {
+    font-size: var(--font-size-base);
+    color: var(--color-text-primary);
+    white-space: normal;
+}
+
+.text-secondary {
+    color: var(--color-text-secondary);
+}
+
+.text-muted {
+    color: var(--color-text-muted);
+}
+
+.text-center {
+    -unity-text-align: middle-center;
+}
+
+.text-bold {
+    -unity-font-style: bold;
+}
+
+/* ── Layout utilities ── */
+.row {
+    flex-direction: row;
+}
+
+.center {
+    align-items: center;
+    justify-content: center;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+.grow {
+    flex-grow: 1;
+}
+
+.hidden {
+    display: none;
+}

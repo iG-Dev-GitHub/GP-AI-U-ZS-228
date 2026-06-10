@@ -1,0 +1,35 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements">
+    <ui:VisualElement name="sprint-root" class="screen sprint-screen" style="padding-left: 16px; padding-right: 16px;">
+
+        <ui:VisualElement name="screen-content">
+            <ui:VisualElement class="top-bar">
+                <ui:Button name="sprint-close" class="icon-btn">
+                    <ui:Label text="✖" class="icon-btn-icon" />
+                </ui:Button>
+                <ui:Label text="Full Sprint" class="top-kicker text-sprint-light" />
+                <ui:VisualElement class="icon-btn" />
+            </ui:VisualElement>
+
+            <ui:VisualElement class="timer-wrap">
+                <ui:Label name="sprint-timer-label" text="Finish all by 18:00" class="timer-label" />
+                <ui:Label name="sprint-timer" text="00:00:00" class="timer-xl" />
+                <ui:VisualElement class="sprint-progress">
+                    <ui:VisualElement name="sprint-progress-fill" class="sprint-progress-fill" />
+                </ui:VisualElement>
+                <ui:Label name="sprint-progress-text" text="0/0 tasks complete" class="sprint-progress-text" />
+            </ui:VisualElement>
+
+            <ui:VisualElement name="sprint-cleared" class="cleared-banner hidden">
+                <ui:Label text="🏆" class="cleared-icon" />
+                <ui:Label text="Day Clear! Sprint won." class="cleared-text" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+
+        <ui:ScrollView class="screen-scroll" vertical-scroller-visibility="Hidden" horizontal-scroller-visibility="Hidden">
+            <ui:VisualElement style="padding-bottom: 28px;">
+                <ui:VisualElement name="sprint-list" />
+                <ui:Label name="sprint-empty" text="Add tasks on the Today tab first." class="empty-text hidden text-sprint-light" style="margin-top: 20px;" />
+            </ui:VisualElement>
+        </ui:ScrollView>
+    </ui:VisualElement>
+</ui:UXML>

@@ -1,0 +1,47 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements">
+    <ui:ScrollView class="screen-scroll" vertical-scroller-visibility="Hidden" horizontal-scroller-visibility="Hidden">
+        <ui:VisualElement name="screen-content" class="screen-content">
+
+            <ui:Label text="Preferences" class="kicker" />
+            <ui:Label text="Settings" class="h1" />
+
+            <ui:Label text="Times" class="section-title" />
+            <ui:Button name="setting-morning" class="setting-row">
+                <ui:Label text="☀" class="setting-icon" />
+                <ui:Label text="Morning Drop" class="setting-label" />
+                <ui:Label name="setting-morning-value" text="08:00" class="setting-value" />
+                <ui:Label text="›" class="setting-chevron" />
+            </ui:Button>
+            <ui:Button name="setting-sprint" class="setting-row">
+                <ui:Label text="🔥" class="setting-icon" />
+                <ui:Label text="Full Sprint Deadline" class="setting-label" />
+                <ui:Label name="setting-sprint-value" text="18:00" class="setting-value" />
+                <ui:Label text="›" class="setting-chevron" />
+            </ui:Button>
+            <ui:Button name="setting-evening" class="setting-row">
+                <ui:Label text="🌙" class="setting-icon" />
+                <ui:Label text="Evening Reminder" class="setting-label" />
+                <ui:Label name="setting-evening-value" text="22:00" class="setting-value" />
+                <ui:Label text="›" class="setting-chevron" />
+            </ui:Button>
+
+            <ui:Label text="Risk Level" class="section-title" />
+            <ui:VisualElement class="risk-row">
+                <ui:Button name="setting-risk-easy" class="risk-chip">
+                    <ui:Label text="Easy" class="risk-text" />
+                </ui:Button>
+                <ui:Button name="setting-risk-hardcore" class="risk-chip" style="margin-right: 0;">
+                    <ui:Label text="Hardcore" class="risk-text" />
+                </ui:Button>
+            </ui:VisualElement>
+            <ui:Label text="Easy biases the ball toward Steady and Quick Win. Hardcore tilts it to Deep Work and Full Sprint." class="hint-text" />
+
+            <ui:Label text="Data" class="section-title" />
+            <ui:Button name="setting-reset" class="reset-btn">
+                <ui:Label text="🗑" class="reset-icon" />
+                <ui:Label text="Reset All Data" class="reset-text" />
+            </ui:Button>
+
+        </ui:VisualElement>
+    </ui:ScrollView>
+</ui:UXML>

@@ -1,0 +1,11 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements">
+    <ui:VisualElement class="history-row">
+        <ui:VisualElement name="history-dot" class="history-dot" />
+        <ui:VisualElement class="grow">
+            <ui:Label name="history-title" text="Steady Day" class="history-title" />
+            <ui:Label name="history-date" text="2026-01-01" class="history-date" />
+        </ui:VisualElement>
+        <ui:Label name="history-tasks" text="0/0" class="history-tasks" />
+        <ui:Label name="history-status" text="✔" class="history-status-icon" />
+    </ui:VisualElement>
+</ui:UXML>

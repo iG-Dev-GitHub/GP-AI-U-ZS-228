@@ -1,0 +1,52 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements">
+    <ui:VisualElement name="drop-root" class="screen" style="padding-left: 16px; padding-right: 16px;">
+
+        <ui:VisualElement name="screen-content">
+            <ui:VisualElement class="top-bar">
+                <ui:Button name="drop-close" class="icon-btn">
+                    <ui:Label text="✖" class="icon-btn-icon" />
+                </ui:Button>
+                <ui:Label text="Drop the ball" class="top-kicker" />
+                <ui:VisualElement class="icon-btn" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+
+        <ui:VisualElement class="align-center">
+            <ui:VisualElement name="drop-board-slot" />
+        </ui:VisualElement>
+
+        <ui:VisualElement class="drop-bottom">
+
+            <ui:VisualElement name="drop-ready">
+                <ui:VisualElement style="margin-bottom: 14px;">
+                    <ui:Label text="Risk Level" class="label-kicker" />
+                    <ui:VisualElement class="risk-row">
+                        <ui:Button name="drop-risk-easy" class="risk-chip">
+                            <ui:Label text="Easy" class="risk-text" />
+                        </ui:Button>
+                        <ui:Button name="drop-risk-hardcore" class="risk-chip" style="margin-right: 0;">
+                            <ui:Label text="Hardcore" class="risk-text" />
+                        </ui:Button>
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:Button name="drop-ball" class="btn-pill">
+                    <ui:Label text="🚀" class="btn-pill-icon" />
+                    <ui:Label text="Drop" class="btn-pill-text" />
+                </ui:Button>
+            </ui:VisualElement>
+
+            <ui:VisualElement name="drop-dropping" class="dropping-msg hidden">
+                <ui:Label text="Dropping…" class="dropping-text" />
+            </ui:VisualElement>
+
+            <ui:VisualElement name="drop-landed" class="hidden">
+                <ui:VisualElement name="drop-format-slot" style="margin-bottom: 12px;" />
+                <ui:Button name="drop-continue" class="btn-pill">
+                    <ui:Label name="drop-continue-icon" text="✔" class="btn-pill-icon" />
+                    <ui:Label name="drop-continue-text" text="Let's go" class="btn-pill-text" />
+                </ui:Button>
+            </ui:VisualElement>
+
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

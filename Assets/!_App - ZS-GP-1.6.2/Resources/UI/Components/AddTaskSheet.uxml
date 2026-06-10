@@ -1,0 +1,28 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements">
+    <ui:VisualElement name="addtask-backdrop" class="modal-backdrop">
+        <ui:VisualElement name="addtask-sheet" class="modal-sheet">
+            <ui:Label text="New Task" class="modal-title" />
+            <ui:TextField name="addtask-input" class="modal-input" />
+            <ui:Label text="Priority" class="modal-label" />
+            <ui:VisualElement class="priority-row">
+                <ui:Button name="addtask-prio-low" class="priority-chip">
+                    <ui:Label text="Low" class="priority-chip-text" />
+                </ui:Button>
+                <ui:Button name="addtask-prio-med" class="priority-chip">
+                    <ui:Label text="Med" class="priority-chip-text" />
+                </ui:Button>
+                <ui:Button name="addtask-prio-high" class="priority-chip" style="margin-right: 0;">
+                    <ui:Label text="High" class="priority-chip-text" />
+                </ui:Button>
+            </ui:VisualElement>
+            <ui:VisualElement class="modal-actions">
+                <ui:Button name="addtask-cancel" class="modal-btn modal-btn-ghost">
+                    <ui:Label text="Cancel" class="modal-btn-text text-secondary" />
+                </ui:Button>
+                <ui:Button name="addtask-submit" class="modal-btn modal-btn-primary" style="margin-right: 0;">
+                    <ui:Label text="Add" class="modal-btn-text text-inverse" />
+                </ui:Button>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

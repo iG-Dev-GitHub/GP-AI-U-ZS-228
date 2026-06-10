@@ -1,0 +1,24 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements">
+    <ui:VisualElement name="welcome-root" class="screen">
+
+        <ui:VisualElement name="screen-content" class="welcome-slide">
+            <ui:VisualElement name="welcome-board-slot" />
+            <ui:VisualElement name="welcome-badge" class="welcome-badge">
+                <ui:Label name="welcome-badge-text" text="Step 1 of 3" class="welcome-badge-text" />
+            </ui:VisualElement>
+            <ui:Label name="welcome-title" text="Add Your Tasks" class="welcome-title" />
+            <ui:Label name="welcome-body" text="Drop in up to 10 things you want to get done today." class="welcome-body" />
+        </ui:VisualElement>
+
+        <ui:VisualElement class="welcome-footer">
+            <ui:VisualElement class="dots-row">
+                <ui:VisualElement name="welcome-dot-0" class="dot dot-active" />
+                <ui:VisualElement name="welcome-dot-1" class="dot" />
+                <ui:VisualElement name="welcome-dot-2" class="dot" />
+            </ui:VisualElement>
+            <ui:Button name="welcome-next" class="btn-pill">
+                <ui:Label name="welcome-next-text" text="Next" class="btn-pill-text" />
+            </ui:Button>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

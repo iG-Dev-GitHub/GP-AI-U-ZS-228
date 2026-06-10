@@ -1,0 +1,38 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements">
+    <ui:ScrollView class="screen-scroll" vertical-scroller-visibility="Hidden" horizontal-scroller-visibility="Hidden">
+        <ui:VisualElement name="screen-content" class="screen-content">
+
+            <ui:VisualElement class="header-row">
+                <ui:VisualElement>
+                    <ui:Label name="today-kicker" text="Morning session" class="kicker" />
+                    <ui:Label name="today-title" text="Today" class="h1" />
+                </ui:VisualElement>
+                <ui:VisualElement class="progress-pill">
+                    <ui:Label name="today-progress" text="0/0" class="progress-pill-text" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+
+            <ui:VisualElement name="today-format-slot" style="margin-top: 14px;" />
+            <ui:VisualElement name="today-board-slot" class="board-wrap" />
+
+            <ui:VisualElement class="cta-row">
+                <ui:Button name="today-cta" class="cta">
+                    <ui:Label name="today-cta-icon" text="🚀" class="cta-icon" />
+                    <ui:Label name="today-cta-text" text="Drop for Today" class="cta-text" />
+                </ui:Button>
+                <ui:Button name="today-add" class="add-square">
+                    <ui:Label text="+" class="add-square-icon" />
+                </ui:Button>
+            </ui:VisualElement>
+
+            <ui:Label name="today-section" text="Tasks (0/10)" class="section-title" />
+            <ui:VisualElement name="today-list" />
+
+            <ui:VisualElement name="today-empty" class="empty-state hidden">
+                <ui:Label text="📋" class="empty-icon" />
+                <ui:Label text="No tasks yet. Tap + to add up to 10 tasks for today." class="empty-text" />
+            </ui:VisualElement>
+
+        </ui:VisualElement>
+    </ui:ScrollView>
+</ui:UXML>

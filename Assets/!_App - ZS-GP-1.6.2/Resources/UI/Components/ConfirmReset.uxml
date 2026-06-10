@@ -1,0 +1,16 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements">
+    <ui:VisualElement name="confirm-backdrop" class="modal-backdrop modal-backdrop-center">
+        <ui:VisualElement class="modal-sheet-center">
+            <ui:Label text="Reset everything?" class="modal-title" />
+            <ui:Label text="This deletes tasks, streaks, badges and history. Cannot be undone." class="modal-body-text" />
+            <ui:VisualElement class="modal-actions">
+                <ui:Button name="confirm-cancel" class="modal-btn modal-btn-ghost">
+                    <ui:Label text="Cancel" class="modal-btn-text text-secondary" />
+                </ui:Button>
+                <ui:Button name="confirm-reset" class="modal-btn modal-btn-danger" style="margin-right: 0;">
+                    <ui:Label text="Reset" class="modal-btn-text text-white" />
+                </ui:Button>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

@@ -1,0 +1,19 @@
+{
+    "name": "App_Release",
+    "rootNamespace": "",
+    "references": [
+        "GUID:6055be8ebefd69e48b49212b09b47b2f",
+        "GUID:2a37df438292d4903b4e5159c5de3bf9",
+        "GUID:4ca033ee547ec451c8a2d3c33d7620ad",
+        "GUID:76c53d730a38d4b55bf1045c25cd893c"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -1,0 +1,57 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements">
+    <ui:ScrollView class="screen-scroll" vertical-scroller-visibility="Hidden" horizontal-scroller-visibility="Hidden">
+        <ui:VisualElement name="screen-content" class="screen-content">
+
+            <ui:Label text="Your Progress" class="kicker" />
+            <ui:Label text="Stats" class="h1" />
+
+            <ui:VisualElement class="metrics-row">
+                <ui:VisualElement class="metric">
+                    <ui:Label text="✅" class="metric-icon icon-clear" />
+                    <ui:Label name="stat-day-clear" text="0" class="metric-value" />
+                    <ui:Label text="DAY CLEAR" class="metric-label" />
+                </ui:VisualElement>
+                <ui:VisualElement class="metric">
+                    <ui:Label text="🔥" class="metric-icon icon-streak" />
+                    <ui:Label name="stat-streak" text="0" class="metric-value" />
+                    <ui:Label text="STREAK" class="metric-label" />
+                </ui:VisualElement>
+                <ui:VisualElement class="metric" style="margin-right: 0;">
+                    <ui:Label text="⚡" class="metric-icon icon-sprint" />
+                    <ui:Label name="stat-sprints" text="0" class="metric-value" />
+                    <ui:Label text="SPRINTS WON" class="metric-label" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+
+            <ui:Label text="Badges" class="section-title" />
+            <ui:VisualElement class="badges-row">
+                <ui:VisualElement name="badge-day-clear" class="badge-tile">
+                    <ui:VisualElement class="badge-emoji-wrap">
+                        <ui:Label text="🏆" class="badge-emoji" />
+                    </ui:VisualElement>
+                    <ui:Label text="Day Clear" class="badge-title" />
+                    <ui:Label name="badge-day-clear-lock" text="Locked" class="badge-lock-text" />
+                </ui:VisualElement>
+                <ui:VisualElement name="badge-on-fire" class="badge-tile">
+                    <ui:VisualElement class="badge-emoji-wrap">
+                        <ui:Label text="🔥" class="badge-emoji" />
+                    </ui:VisualElement>
+                    <ui:Label text="On Fire" class="badge-title" />
+                    <ui:Label name="badge-on-fire-lock" text="Locked" class="badge-lock-text" />
+                </ui:VisualElement>
+                <ui:VisualElement name="badge-week-champion" class="badge-tile" style="margin-right: 0;">
+                    <ui:VisualElement class="badge-emoji-wrap">
+                        <ui:Label text="🏅" class="badge-emoji" />
+                    </ui:VisualElement>
+                    <ui:Label text="Week Champ" class="badge-title" />
+                    <ui:Label name="badge-week-champion-lock" text="Locked" class="badge-lock-text" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+
+            <ui:Label text="History" class="section-title" />
+            <ui:VisualElement name="stats-history" />
+            <ui:Label name="stats-history-empty" text="No completed days yet. Keep going." class="empty-text hidden" style="margin-top: 12px;" />
+
+        </ui:VisualElement>
+    </ui:ScrollView>
+</ui:UXML>
